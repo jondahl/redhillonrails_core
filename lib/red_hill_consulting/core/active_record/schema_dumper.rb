@@ -37,7 +37,7 @@ module RedHillConsulting::Core::ActiveRecord
 
     def foreign_keys(table, stream)
       foreign_keys = @connection.foreign_keys(table)
-      foreign_keys.each do |foreign_key|
+      foreign_keys.sort.each do |foreign_key|
         stream.print "  "
         stream.print foreign_key.to_dump
         stream.puts
